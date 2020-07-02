@@ -1,0 +1,54 @@
+<nav class="navbar navbar-dark bg-dark">
+  <h1>Bootcamp</h1>
+</nav>
+
+<div class="demo">
+<form #f="ngForm" name="form" (ngSubmit)="submit(f)" autocomplete="off">
+  <h2>Register Form</h2><br><br>
+  <div class="form-group">      
+    <div class="col-md-4 mb-3">
+    
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input type="text" [(ngModel)]="user.fullName" class="form-control" placeholder="name" id="fullName" name="fullName" >
+      </div>
+   </div>
+  </div>
+  <div class="form-group">      
+    <div class="col-md-4 mb-3">
+    
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input type="text"  [(ngModel)]="user.email" class="form-control" placeholder="Email" id="email" name="email" >
+      </div>
+      </div>
+  </div>
+
+  <div class="form-group">      
+    <div class="col-md-4 mb-3">
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="password" id="password" name="password">
+  </div>
+</div>
+</div>
+  <button type="submit" class="btn btn-outline-info">Register</button>&nbsp; &nbsp;
+
+  <button type="submit" class="btn btn-primary" (click)="log()">Login</button>
+
+<div class="alert alert-success alert-dismissible fade show" *ngIf="successmessage">
+  Saved successfully
+</div>
+
+<!-- Error message -->
+
+<div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errormessage">
+  {{errormessage}}
+</div>
+</form>
+</div>
+
+
+
+
+

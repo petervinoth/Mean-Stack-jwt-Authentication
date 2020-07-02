@@ -1,0 +1,67 @@
+
+
+<nav class="navbar navbar-dark bg-dark">
+ <h1>Bootcamp</h1>
+</nav>
+<div class="container">
+<div id="demo">
+
+
+	<div  class="border text-center border border-primary border-right border-left">
+<div>
+  <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-orig-src="assets/img/single_user.png" id="icon" alt="User Icon" />
+</div>
+
+  <h2>Login</h2><br>
+<form #signInForm="ngForm" (ngSubmit)="signInForm.valid && submit(signInForm)">
+  <div class="form-group">      
+    <div class="col-md-4 mb-3">
+  <input type="text" name="email" class="form-control" #email="ngModel" [(ngModel)]="model.email" placeholder="Email" [pattern]="emailRegex" required
+    [ngClass]="{'invalid-textbox' :signInForm.submitted && !email.valid }"><br><br>
+  <div *ngIf="signInForm.submitted && email.errors?.pattern">
+    <label class="validation-message">Invalid email address.</label>
+  </div>
+  </div>
+  </div>
+  <div class="form-group">      
+    <div class="col-md-4 mb-3">
+  <input type="password" name="password" class="form-control" #password="ngModel" [(ngModel)]="model.password" placeholder="Password" required minlength="4"
+    [ngClass]="{'invalid-textbox' :signInForm.submitted && !password.valid }"><br><br>
+  <div *ngIf="signInForm.submitted && password.errors?.minlength">
+    <label class="validation-message">Minimum 4 characters.</label>
+  </div>
+  </div>
+  </div>
+  <input type="submit" class="btn btn-success" value="Sign In">&nbsp; &nbsp;
+
+  <button type="submit" class="btn btn-primary" (click)="iner()">Register</button>
+  
+</form>
+
+
+
+  
+
+<div class="alert" *ngIf="errormessage">
+  {{errormessage}}
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

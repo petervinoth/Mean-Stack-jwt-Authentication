@@ -1,0 +1,23 @@
+
+             <h2>Student Details</h2> 
+
+<hr/>
+<div *ngIf="userDetails">
+  <div>
+    <label><b>Name: </b></label> {{userDetails.fullName.split(' ')[0]}}
+  </div>
+  <div>
+    <label><b>last Name: </b></label> {{userDetails.fullName.split(' ')[1]}}
+  </div>
+  <div>
+    <label><b>email: </b></label> {{userDetails.email}}
+  </div>  
+ 
+</div>
+
+<br>
+<br>
+<button (click)="logout()" class="btn btn-primary">logout</button><br>
+         
+         
+               
